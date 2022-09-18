@@ -4,9 +4,9 @@
   padding: 0;
 }
 main .to-do {
-  display: flex;
   align-items: center;
-  gap: 0 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #f00;
 }
 main .input-container {
   border: 1px solid #000;
@@ -18,19 +18,31 @@ main .input-container .task {
   border: none;
   outline: none;
   padding: 0.5rem;
-  width: 27rem;
+  width: 100%;
 }
 main .input-container .input-date {
   border: 1px solid #bbb;
   outline: none;
   border-radius: 10px;
 }
-.input-date::-webkit-datetime-edit {
+/* .input-date::-webkit-datetime-edit {
   color: transparent;
 }
 .input-date:focus::-webkit-datetime-edit {
   color: #000;
+} */
+.add-btn {
+  width: 100%;
 }
 .to-do-list ul {
   list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+.date {
+  font-size: 0.9rem;
+}
+.tasks {
+  border: 1px solid #f00;
 }
