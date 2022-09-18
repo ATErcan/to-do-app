@@ -31,3 +31,6 @@ main .input-container .input-date {
 .input-date:focus::-webkit-datetime-edit {
   color: #000;
 }
+.to-do-list ul {
+  list-style-type: none;
+}
