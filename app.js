@@ -102,27 +102,20 @@ addBtn.addEventListener("click", () => {
           compCounter--;
           compCount.textContent = `Number of completed: ${compCounter}`;
           i.classList.add("uncomp-trash");
-          const uncompTrash = document.querySelectorAll(".uncomp-trash");
-          uncompTrash.forEach((t) => {
-            t.addEventListener("click", () => {
-              t.parentElement.parentElement.parentElement.remove();
-              totalCounter--;
-              totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-            });
-          });
         } else {
-          console.log(totalCounter);
+          // console.log(totalCounter);
           uncompleted.appendChild(i.parentElement.parentElement.parentElement);
           i.classList.add("uncomp-trash");
-          const uncompTrash = document.querySelectorAll(".uncomp-trash");
-          uncompTrash.forEach((t) => {
-            t.addEventListener("click", () => {
-              t.parentElement.parentElement.parentElement.remove();
-              totalCounter -= 1;
-              totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-            });
-          });
         }
+        const uncompTrash = document.querySelectorAll(".uncomp-trash");
+        uncompTrash.forEach((t) => {
+          t.addEventListener("click", () => {
+            console.log("kasdka");
+            t.parentElement.parentElement.parentElement.remove();
+            totalCounter--;
+            totalTasks.textContent = `Number of tasks: ${totalCounter}`;
+          });
+        });
       });
     });
   });
