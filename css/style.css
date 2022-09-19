@@ -7,9 +7,10 @@ main .to-do {
   align-items: center;
   margin-bottom: 1rem;
   border: 1px solid #f00;
+  border-radius: 10px;
 }
 main .input-container {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   border-radius: 10px;
   display: flex;
   padding: 0.1rem 0.3rem;
@@ -57,4 +58,19 @@ main .input-container .input-date {
   line-break: anywhere;
   height: auto;
   font-size: 0.9rem;
+}
+.trash:hover {
+  color: #f00;
+  animation: trash-shake 0.3s linear 3;
+}
+@keyframes trash-shake {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
