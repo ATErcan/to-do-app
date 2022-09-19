@@ -41,7 +41,11 @@ addBtn.addEventListener("click", () => {
   const trashBin = document.querySelectorAll(".trash");
   for (let item of trashBin) {
     item.addEventListener("click", () => {
-      item.parentElement.parentElement.parentElement.remove();
+      document
+        .querySelector(".incompleted")
+        .appendChild(
+          item.parentElement.parentElement.parentElement.childNodes[0]
+        );
     });
   }
 });
