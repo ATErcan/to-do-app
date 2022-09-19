@@ -18,8 +18,10 @@ totalTasks.textContent = `Number of tasks: ${totalCounter}`;
 
 // Add li elements to main list
 let count = 0;
+let remove = 0;
 const createLi = () => {
   count++;
+  remove++;
   totalCounter++;
   toDoUl.innerHTML += `<li class="p-0 list-item">
       <div class="row tasks align-items-center">
@@ -78,7 +80,7 @@ addBtn.addEventListener("click", () => {
       }
     });
   });
-  /*   for (let item of trashBin) {
+  for (let item of trashBin) {
     item.addEventListener("click", () => {
       uncompleted.appendChild(item.parentElement.parentElement.parentElement);
       item.classList.add("uncomp-trash");
@@ -91,9 +93,9 @@ addBtn.addEventListener("click", () => {
         });
       }
     });
-  } */
+  }
 
-  trashBin.forEach((i) => {
+  /*   trashBin.forEach((i) => {
     i.addEventListener("click", () => {
       checkbox.forEach((item) => {
         if (item.checked) {
@@ -107,18 +109,9 @@ addBtn.addEventListener("click", () => {
           uncompleted.appendChild(i.parentElement.parentElement.parentElement);
           i.classList.add("uncomp-trash");
         }
-        const uncompTrash = document.querySelectorAll(".uncomp-trash");
-        uncompTrash.forEach((t) => {
-          t.addEventListener("click", () => {
-            console.log("kasdka");
-            t.parentElement.parentElement.parentElement.remove();
-            totalCounter--;
-            totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-          });
-        });
       });
     });
-  });
+  }); */
 });
 /*     i.addEventListener("click", () => {
       uncompleted.appendChild(item.parentElement.parentElement.parentElement);
