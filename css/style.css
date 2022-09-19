@@ -5,7 +5,6 @@
 }
 main .to-do {
   align-items: center;
-  margin-bottom: 1rem;
   border: 1px solid #f00;
   border-radius: 10px;
 }
@@ -49,6 +48,7 @@ main .input-container .input-date {
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
+  border-radius: 7px;
 }
 .date {
   font-size: 0.9rem;
