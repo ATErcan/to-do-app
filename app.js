@@ -17,11 +17,10 @@ addBtn.addEventListener("click", () => {
     alert("No task written.");
   } else {
     addToArray();
-    counter += 1;
     toDoUl.innerHTML += `<li class="p-0 list-item">
       <div class="row tasks align-items-center">
         <div class="col-1">
-          <input type="checkbox" name="task-check" id="task-check">
+          <input type="checkbox" name="task-check" id="task-check" class="task-check">
         </div>
         <div class="col-2 date d-flex align-items-center">
           ${dateInput.value}
@@ -34,18 +33,25 @@ addBtn.addEventListener("click", () => {
         </div>
       </div>
     </li>`;
-    dateInput.value = "";
-    taskBox.value = "";
+    counter += 1;
+    // toDoUl.innerHTML += dateInput.value = "";
+    // taskBox.value = "";
   }
 
   const trashBin = document.querySelectorAll(".trash");
+  const completed = document.querySelector(".comp-list");
+  const uncompleted = document.querySelector(".uncomp-list");
+  const checkbox = document.querySelectorAll(".task-check");
   for (let item of trashBin) {
     item.addEventListener("click", () => {
-      document
-        .querySelector(".incompleted")
-        .appendChild(
-          item.parentElement.parentElement.parentElement.childNodes[0]
-        );
+      uncompleted.appendChild(item.parentElement.parentElement.parentElement);
+      item.classList.add("uncomp-trash");
+      const uncompTrash = document.querySelectorAll(".uncomp-trash");
+      for (let item of uncompTrash) {
+        item.addEventListener("click", () => {
+          item.parentElement.parentElement.parentElement.remove();
+        });
+      }
     });
   }
 });

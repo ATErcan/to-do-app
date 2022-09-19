@@ -35,7 +35,9 @@ main .input-container .input-date {
 .add-btn {
   width: 100%;
 }
-.to-do-list ul {
+.to-do-list ul,
+.comp-list,
+.uncomp-list {
   list-style-type: none;
   list-style-position: inside;
   margin: 0;
@@ -43,18 +45,20 @@ main .input-container .input-date {
 }
 .list-item {
   margin-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
 }
 .date {
   font-size: 0.9rem;
 }
 .tasks {
-  border: 1px solid #f00;
   height: auto;
+  padding: 0.2rem;
 }
 .task-out {
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   line-break: anywhere;
   height: auto;
   font-size: 0.9rem;
@@ -62,6 +66,31 @@ main .input-container .input-date {
 .trash:hover {
   color: #f00;
   animation: trash-shake 0.3s linear 3;
+}
+.uncompleted .uncomp-list {
+  background-image: url("https://imageio.forbes.com/specials-images/dam/imageserve/1092571024/0x0.jpg?format=jpg&width=1200");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 20rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.uncompleted .uncomp-list li {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.completed .comp-list {
+  background-image: url("https://wallpapers.com/images/hd/patrick-star-to-do-list-frot5mbh3i7rnb2e-frot5mbh3i7rnb2e.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 20rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+  border-radius: 10px;
 }
 @keyframes trash-shake {
   0% {
