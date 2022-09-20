@@ -120,6 +120,12 @@ main .input-container .input-date {
   background-color: rgba(20, 238, 35, 0.4);
   color: #444;
 }
+footer a {
+  display: inline-block;
+}
+footer a:hover {
+  animation: click 0.5s linear 1;
+}
 @keyframes trash-shake {
   0% {
     transform: rotate(-20deg);
@@ -129,6 +135,20 @@ main .input-container .input-date {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@keyframes click {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @media screen and (max-width: 280px) {
