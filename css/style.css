@@ -91,6 +91,14 @@ main .input-container .input-date {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 1rem;
   border-radius: 10px;
+  text-decoration: line-through;
+}
+.uncompleted .uncomp-list .list-item {
+  background-color: rgba(235, 29, 54, 0.4);
+}
+.completed .comp-list .list-item {
+  background-color: rgba(20, 238, 35, 0.4);
+  color: #444;
 }
 @keyframes trash-shake {
   0% {

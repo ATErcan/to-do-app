@@ -80,7 +80,45 @@ addBtn.addEventListener("click", () => {
       }
     });
   });
-  for (let item of trashBin) {
+
+  trashBin.forEach((i) => {
+    i.addEventListener("click", () => {
+      console.log(
+        i.parentElement.parentElement.parentElement.parentElement.parentElement
+      );
+      if (
+        i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
+          "uncompleted"
+        )
+      ) {
+        i.parentElement.parentElement.parentElement.remove();
+        totalCounter--;
+        totalTasks.textContent = `Number of tasks: ${totalCounter}`;
+      } else if (
+        i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
+          "completed"
+        )
+      ) {
+        uncompleted.appendChild(i.parentElement.parentElement.parentElement);
+        compCounter--;
+        compCount.textContent = `Number of completed: ${compCounter}`;
+        i.parentElement.parentElement.childNodes[1].childNodes[1].checked = false;
+      } else {
+        uncompleted.appendChild(i.parentElement.parentElement.parentElement);
+      }
+    });
+  });
+});
+
+taskBox.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
+    addBtn.click();
+  }
+});
+
+// The algortihms that i wrote until i find the right solution
+
+/*   for (let item of trashBin) {
     item.addEventListener("click", () => {
       uncompleted.appendChild(item.parentElement.parentElement.parentElement);
       item.classList.add("uncomp-trash");
@@ -93,9 +131,9 @@ addBtn.addEventListener("click", () => {
         });
       }
     });
-  }
+  } */
 
-  /*   trashBin.forEach((i) => {
+/*   trashBin.forEach((i) => {
     i.addEventListener("click", () => {
       checkbox.forEach((item) => {
         if (item.checked) {
@@ -112,7 +150,7 @@ addBtn.addEventListener("click", () => {
       });
     });
   }); */
-});
+
 /*     i.addEventListener("click", () => {
       uncompleted.appendChild(item.parentElement.parentElement.parentElement);
 
