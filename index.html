@@ -23,23 +23,39 @@
     <title>TO-DO LIST</title>
   </head>
   <body>
-    <div class="header container bg-danger text-white">
-      <h1>TO-DO LIST</h1>
-      <p class="description">
-        Welcome to My To-Do-List App. You can write your tasks with the date you
-        do them
-      </p>
-    </div>
-
     <main class="container-fluid">
       <div class="container">
+        <header class="header container p-4">
+          <h1>TO-DO LIST</h1>
+          <p class="description">
+            Welcome to My To-Do-List App. You can add your tasks to the list
+            with the dates you have done or will do.
+            <br />
+            Your tasks will be added to the list. If you click on trash icon on
+            your task, the task will moved to the do-it later section. But if
+            you don't want to do that task anymore, go to the do-it later list
+            and click on the trash icon again. This will remove your task
+            compeletely. Is that all? No. If you check the checkbox of your
+            task, the task will moved to the completed tasks section. And if you
+            remove the tic, your task will moved to the do-it later section.
+            <br />
+            You can also make the tasks you added in the completed section not
+            completed again, or even delete them in the same way.
+          </p>
+        </header>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 main-list p-3">
             <div class="to-do row mb-2">
               <div class="col-10">
                 <div class="input-container">
                   <input type="date" name="date" id="date" class="input-date" />
-                  <input type="text" name="task" id="task" class="task" />
+                  <input
+                    type="text"
+                    name="task"
+                    id="task"
+                    class="task"
+                    placeholder="Enter your task here"
+                  />
                 </div>
               </div>
 

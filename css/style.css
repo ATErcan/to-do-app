@@ -3,9 +3,28 @@
   margin: 0;
   padding: 0;
 }
+main .container {
+  background-image: url("https://wallpapers.com/images/hd/white-old-paper-with-dark-stains-tlxzuvap31mxywve-tlxzuvap31mxywve.webp");
+  padding: 0 2rem 3rem;
+}
+main .container .header {
+  color: #333;
+}
+main .container .header p {
+  font-weight: 500;
+}
+main .main-list {
+  background-image: url("https://wallpapers.com/images/hd/blank-crumpled-paper-ce2xfk1vk85mutcp-ce2xfk1vk85mutcp.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 main .to-do {
   align-items: center;
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   border-radius: 10px;
 }
 main .input-container {
@@ -18,19 +37,16 @@ main .input-container .task {
   border: none;
   outline: none;
   padding: 0.5rem;
-  width: 90%;
+  width: 95%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 main .input-container .input-date {
-  border: 1px solid #bbb;
+  border: none;
   outline: none;
   border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
-/* .input-date::-webkit-datetime-edit {
-  color: transparent;
-}
-.input-date:focus::-webkit-datetime-edit {
-  color: #000;
-} */
 .add-btn {
   width: 100%;
 }
