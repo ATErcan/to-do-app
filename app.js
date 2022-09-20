@@ -12,10 +12,6 @@ let compCounter = 0;
 compCount.textContent = `Number of completed: ${compCounter}`;
 totalTasks.textContent = `Number of tasks: ${totalCounter}`;
 
-/* const addToArray = () => {
-  taskList.push(`${taskBox.value}`);
-}; */
-
 // Add li elements to main list
 let count = 0;
 let remove = 0;
@@ -25,16 +21,16 @@ const createLi = () => {
   totalCounter++;
   toDoUl.innerHTML += `<li class="p-0 list-item">
       <div class="row tasks align-items-center">
-        <div class="col-1">
+        <div class="col-1 col-md-1">
           <input type="checkbox" name="task-check" id="task-check" class="task-check" data-check="${count}">
         </div>
-        <div class="col-2 date d-flex align-items-center">
+        <div class="col-3 col-md-2 date d-flex align-items-center">
           ${dateInput.value}
         </div>
-        <div class="col-8 d-flex align-items-center">
+        <div class="col-6 col-md-8 d-flex align-items-center">
           <div class="task-out">${taskBox.value}</div>          
         </div>
-        <div class="col-1">
+        <div class="col-2 col-md-1">
           <i class="fa-regular fa-trash-can trash"></i>
         </div>
       </div>
@@ -51,8 +47,6 @@ addBtn.addEventListener("click", () => {
   } else if (taskBox.value.trim() === "") {
     alert("No task written.");
   } else {
-    /*    addToArray(); */
-
     // Call the function to create li elements
     createLi();
 
@@ -81,6 +75,7 @@ addBtn.addEventListener("click", () => {
         compCount.textContent = `Number of completed: ${compCounter}`;
         totalCounter++;
         totalTasks.textContent = `Number of tasks: ${totalCounter}`;
+        console.log("error");
       }
     });
   });
