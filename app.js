@@ -6,7 +6,7 @@ const compCount = document.querySelector(".completed .title p");
 const totalTasks = document.querySelector(".total");
 
 const taskList = [];
-let checkbox = [null];
+// let checkbox = [null];
 let totalCounter = 0;
 let compCounter = 0;
 compCount.textContent = `Number of completed: ${compCounter}`;
@@ -51,16 +51,16 @@ addBtn.addEventListener("click", () => {
     createLi();
 
     counter += 1;
-    // toDoUl.innerHTML += dateInput.value = "";
-    // taskBox.value = "";
+    toDoUl.innerHTML += dateInput.value = "";
+    taskBox.value = "";
   }
 
-  // Trash icon events
   const trashBin = document.querySelectorAll(".trash");
   const uncompleted = document.querySelector(".uncomp-list");
   const completed = document.querySelector(".comp-list");
-  checkbox = document.querySelectorAll(".task-check");
+  const checkbox = document.querySelectorAll(".task-check");
 
+  // checkbox events
   checkbox.forEach((item) => {
     item.addEventListener("click", (e) => {
       if (e.target.checked) {
@@ -70,19 +70,31 @@ addBtn.addEventListener("click", () => {
         totalCounter--;
         totalTasks.textContent = `Number of tasks: ${totalCounter}`;
       } else if (!e.target.checked) {
-        uncompleted.appendChild(item.parentElement.parentElement.parentElement);
         compCounter--;
         compCount.textContent = `Number of completed: ${compCounter}`;
         totalCounter++;
         totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-        console.log("error");
+        uncompleted.appendChild(item.parentElement.parentElement.parentElement);
       }
     });
   });
 
+  // Trash icon events
   trashBin.forEach((i) => {
     i.addEventListener("click", () => {
       if (
+        i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
+          "to-do-list"
+        )
+      ) {
+        uncompleted.appendChild(i.parentElement.parentElement.parentElement);
+      } else if (
+        i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
+          "completed"
+        )
+      ) {
+        i.parentElement.parentElement.parentElement.remove();
+      } else if (
         i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
           "uncompleted"
         )
@@ -90,19 +102,6 @@ addBtn.addEventListener("click", () => {
         i.parentElement.parentElement.parentElement.remove();
         totalCounter--;
         totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-      } else if (
-        i.parentElement.parentElement.parentElement.parentElement.parentElement.classList.contains(
-          "completed"
-        )
-      ) {
-        uncompleted.appendChild(i.parentElement.parentElement.parentElement);
-        compCounter--;
-        compCount.textContent = `Number of completed: ${compCounter}`;
-        totalCounter++;
-        totalTasks.textContent = `Number of tasks: ${totalCounter}`;
-        i.parentElement.parentElement.childNodes[1].childNodes[1].checked = false;
-      } else {
-        uncompleted.appendChild(i.parentElement.parentElement.parentElement);
       }
     });
   });
