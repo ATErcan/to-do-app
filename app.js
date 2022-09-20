@@ -21,16 +21,16 @@ const createLi = () => {
   totalCounter++;
   toDoUl.innerHTML += `<li class="p-0 list-item">
       <div class="row tasks align-items-center">
-        <div class="col-1 col-md-1">
+        <div class="col-1 col-xl-1">
           <input type="checkbox" name="task-check" id="task-check" class="task-check" data-check="${count}">
         </div>
-        <div class="col-3 col-md-2 date d-flex align-items-center">
+        <div class="col-3 col-xl-2 date d-flex align-items-center">
           ${dateInput.value}
         </div>
-        <div class="col-6 col-md-8 d-flex align-items-center">
+        <div class="col-6 col-xl-8 d-flex align-items-center">
           <div class="task-out">${taskBox.value}</div>          
         </div>
-        <div class="col-2 col-md-1">
+        <div class="col-2 col-xl-1 trash-parent">
           <i class="fa-regular fa-trash-can trash"></i>
         </div>
       </div>
